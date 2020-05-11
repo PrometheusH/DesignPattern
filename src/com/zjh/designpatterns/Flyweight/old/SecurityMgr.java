@@ -34,7 +34,7 @@ public class SecurityMgr {
         Collection<AuthorizationModel> col = new ArrayList<AuthorizationModel>();
         for (String s:TestDB.colDB){
             String[] ss = s.split(",");
-            if (ss[0].equals("user")){
+            if (ss[0].equals(user)){
                 AuthorizationModel am = new AuthorizationModel();
                 am.setUser(ss[0]);
                 am.setSecurityEntity(ss[1]);
