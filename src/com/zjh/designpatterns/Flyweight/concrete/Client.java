@@ -3,6 +3,7 @@ package com.zjh.designpatterns.Flyweight.concrete;
 import com.zjh.designpatterns.Flyweight.concrete.SecurityMgr;
 
 public class Client {
+    //呜哈哈哈哈，测试bbbbbb
     public static void main(String[] args) {
         //需要先登陆，然后再判断是否有权限
         SecurityMgr mgr = SecurityMgr.getInstance();
