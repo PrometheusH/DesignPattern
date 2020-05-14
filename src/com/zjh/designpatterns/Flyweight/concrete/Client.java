@@ -17,7 +17,7 @@ public class Client {
 
         for (int i=0;i<3;i++){
             mgr.login("张三"+i);
-            System.out.println(mgr.hasPermit("张三"+i,"薪资数据","查看"));
+            System.out.println(mgr.hasPermit("张三"+i,"沃特测试CCC数据","查看"));
         }
     }
 }
