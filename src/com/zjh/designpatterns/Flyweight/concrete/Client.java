@@ -7,6 +7,8 @@ public class Client {
     public static void main(String[] args) {
         //需要先登陆，然后再判断是否有权限
         SecurityMgr mgr = SecurityMgr.getInstance();
+        //这里做一次测试aaaaaa
+
         mgr.login("张三");
         mgr.login("李四");
         boolean f1 = mgr.hasPermit("张三","薪资数据","查看");
