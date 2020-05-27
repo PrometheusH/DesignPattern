@@ -72,7 +72,7 @@ public class SecurityMgr {
                 //zjh：也就是说相同的Flyweight，不会有多份。即使是不同的collection中的，
                 //只要是安全实体和权限相同的，就AutorizationFlyWeight只有一个，因为工厂中是相通《安全实体和权限》这个key，直接从工厂自己的Map中拿出的
                 //因为没有新new，而collection中保存的只是该对象的引用
-                //如《薪资数据，查看》这个就只有一个，
+                //如《薪资数据，查看》这个就只有一个。
                 col.add(fm);
             }
         }
