@@ -1,4 +1,4 @@
-package com.zjh.designpatterns.Flyweight.model;
+package com.zjh.designpatterns.flyweight.model;
 
 import java.util.HashMap;
 import java.util.Map;

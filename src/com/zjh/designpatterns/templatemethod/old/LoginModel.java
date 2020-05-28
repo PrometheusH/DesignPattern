@@ -1,4 +1,4 @@
-package com.zjh.designpatterns.TemplateMethod.old;
+package com.zjh.designpatterns.templatemethod.old;
 
 
 public class LoginModel {

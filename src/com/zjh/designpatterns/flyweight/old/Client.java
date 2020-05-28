@@ -1,13 +1,9 @@
-package com.zjh.designpatterns.Flyweight.concrete;
-
-import com.zjh.designpatterns.Flyweight.concrete.SecurityMgr;
+package com.zjh.designpatterns.flyweight.old;
 
 public class Client {
-
     public static void main(String[] args) {
         //需要先登陆，然后再判断是否有权限
         SecurityMgr mgr = SecurityMgr.getInstance();
-
         mgr.login("张三");
         mgr.login("李四");
         boolean f1 = mgr.hasPermit("张三","薪资数据","查看");
@@ -18,7 +14,7 @@ public class Client {
 
         for (int i=0;i<3;i++){
             mgr.login("张三"+i);
-            System.out.println(mgr.hasPermit("张三"+i,"测试数据","查看"));
+            System.out.println(mgr.hasPermit("张三"+i,"薪资数据","查看"));
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.zjh.designpatterns.Flyweight.concrete;
+package com.zjh.designpatterns.flyweight.concrete;
 
 import java.util.HashMap;
 import java.util.Map;

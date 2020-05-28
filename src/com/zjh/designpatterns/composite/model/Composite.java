@@ -27,7 +27,7 @@ public class Composite extends Component{
 
     @Override
     public void addChild(Component child) {
-        //延迟舒适化
+        //延迟初始化
         if (childComponent ==null){
             childComponent = new ArrayList<Component>();
         }

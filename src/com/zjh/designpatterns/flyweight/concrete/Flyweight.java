@@ -1,4 +1,4 @@
-package com.zjh.designpatterns.Flyweight.concrete;
+package com.zjh.designpatterns.flyweight.concrete;
 
 /**
  * 享元接口，通过这个接口可以接受并作用于外部状态

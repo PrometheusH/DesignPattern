@@ -1,6 +1,6 @@
-package com.zjh.designpatterns.Flyweight.concrete;
+package com.zjh.designpatterns.flyweight.concrete;
 
-import com.zjh.designpatterns.Flyweight.old.TestDB;
+import com.zjh.designpatterns.flyweight.old.TestDB;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -1,4 +1,4 @@
-package com.zjh.designpatterns.Flyweight.model;
+package com.zjh.designpatterns.flyweight.model;
 
 /**
  * Client对象，通常会维持一个对Flyweight的引用

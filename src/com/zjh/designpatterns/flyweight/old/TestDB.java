@@ -1,4 +1,4 @@
-package com.zjh.designpatterns.Flyweight.old;
+package com.zjh.designpatterns.flyweight.old;
 
 import java.util.ArrayList;
 import java.util.Collection;

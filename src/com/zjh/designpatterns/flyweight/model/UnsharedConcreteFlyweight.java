@@ -1,4 +1,4 @@
-package com.zjh.designpatterns.Flyweight.model;
+package com.zjh.designpatterns.flyweight.model;
 
 public class UnsharedConcreteFlyweight implements Flyweight{
     /**

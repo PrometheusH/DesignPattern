@@ -59,7 +59,7 @@ public class Composite extends Component {
             //说明是根组件，重复添加了
             throw new IllegalAccessException("在本路径上，组件'" + child.getName() + "'已经被添加过了");
         } else {
-            if (this.getComponentPath().indexOf("." + child.getName()) < 0) {
+            if (!this.getComponentPath().contains("." + child.getName())) {
                 //表示没有出现过可以加入
                 //计算组件的路径
                 String componentPath = this.getComponentPath() + "." + child.getName();
@@ -98,6 +98,8 @@ public class Composite extends Component {
                 childComponents.remove(idx);
             }
         }
+        //移除的时候也要更改componentPath呀！
+
     }
 
 

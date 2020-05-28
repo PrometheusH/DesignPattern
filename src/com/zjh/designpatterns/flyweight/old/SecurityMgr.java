@@ -1,4 +1,4 @@
-package com.zjh.designpatterns.Flyweight.old;
+package com.zjh.designpatterns.flyweight.old;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -56,6 +56,7 @@ public class SecurityMgr {
         }
 
         for (AuthorizationModel am:col){
+            //输出当前实例，看看是否是同一个实例对象
             System.out.println("am==="+am);
             if (am.getSecurityEntity().equals(securityEnity)
             && am.getPermit().equals(permit)){

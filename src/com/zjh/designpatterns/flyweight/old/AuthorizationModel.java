@@ -1,4 +1,4 @@
-package com.zjh.designpatterns.Flyweight.old;
+package com.zjh.designpatterns.flyweight.old;
 
 /**
  * 描述授权数据的Model

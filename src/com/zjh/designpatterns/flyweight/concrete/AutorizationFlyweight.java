@@ -1,6 +1,4 @@
-package com.zjh.designpatterns.Flyweight.concrete;
-
-import com.zjh.designpatterns.Flyweight.concrete.Flyweight;
+package com.zjh.designpatterns.flyweight.concrete;
 
 /**
  * 封装授权数据中重复出现部分的享元对象
