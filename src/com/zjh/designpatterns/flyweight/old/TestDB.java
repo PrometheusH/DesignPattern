@@ -2,6 +2,8 @@ package com.zjh.designpatterns.flyweight.old;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 供测试用，在内存中模拟数据库的值
@@ -14,7 +16,7 @@ public class TestDB {
         //通过静态块来填充模拟的数据
         colDB.add("张三,人员列表,查看");
         colDB.add("李四,人员列表,查看");
-        colDB.add("李四,薪资数据,查看");
+        colDB.add("李￿￿四,薪资数据,查看");
         colDB.add("李四,薪资数据,修改");
 
         //增加更过的授权数据

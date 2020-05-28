@@ -9,7 +9,7 @@ public class Client {
         mgr.login("张三");
         mgr.login("李四");
         boolean f1 = mgr.hasPermit("张三","薪资数据","查看");
-        boolean f2 = mgr.hasPermit("李四","薪资数据","查看");
+        boolean f2 = mgr.hasPermit("李四","薪资数据","修改");
 
         System.out.println("f1=="+f1);
         System.out.println("f2=="+f2);

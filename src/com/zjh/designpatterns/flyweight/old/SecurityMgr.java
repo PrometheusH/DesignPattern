@@ -32,7 +32,7 @@ public class SecurityMgr {
 
     private Collection<AuthorizationModel> queryByUser(String user) {
         Collection<AuthorizationModel> col = new ArrayList<AuthorizationModel>();
-        for (String s:TestDB.colDB){
+        for (String s: TestDB.colDB){
             String[] ss = s.split(",");
             if (ss[0].equals(user)){
                 AuthorizationModel am = new AuthorizationModel();

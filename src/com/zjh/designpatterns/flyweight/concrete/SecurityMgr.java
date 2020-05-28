@@ -1,7 +1,5 @@
 package com.zjh.designpatterns.flyweight.concrete;
 
-import com.zjh.designpatterns.flyweight.old.TestDB;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -44,11 +42,13 @@ public class SecurityMgr {
      */
     public boolean hasPermit(String user,String securityEntity,String permit){
         Collection<Flyweight> col = map.get(user);
+        System.out.println("现在测试 "+securityEntity+" 的 "+permit+" 权限，map.size="+map.size());
         if(col==null||col.size()==0){
             System.out.println(user+"没有登陆或是没有被分配任何权限");
             return false;
         }
         for (Flyweight fm:col){
+            //输出当前实例，看看是否是同一个实例对象
             System.out.println("fm=="+fm);
             if (fm.match(securityEntity,permit)){
                 return true;
@@ -68,12 +68,25 @@ public class SecurityMgr {
         for (String s: TestDB.colDB){
             String[] ss = s.split(",");
             if (ss[0].equals(user)){
-                Flyweight fm = FlyweightFactory.getInstance().getFlyweight(ss[1]+","+ss[2]);
-                //zjh：也就是说相同的Flyweight，不会有多份。即使是不同的collection中的，
-                //只要是安全实体和权限相同的，就AutorizationFlyWeight只有一个，因为工厂中是相通《安全实体和权限》这个key，直接从工厂自己的Map中拿出的
-                //因为没有新new，而collection中保存的只是该对象的引用
-                //如《薪资数据，查看》这个就只有一个。
-                col.add(fm);
+                Flyweight fw = null;
+                if (ss[3].equals("2")){
+                    //表示是组合
+                    fw = new UnsharedConcreteFlyweight();
+                    //通过查表，将该组合对象通过对象名字，查出来是由什么基本享元对象构成的，将这些基本享元对象缓存，并组装好这个组合对象返回，又是多态
+                    String[] tempSs = TestDB.mapDB.get(ss[1]);
+                    for (String ts:tempSs){
+                        Flyweight tempFw = FlyweightFactory.getInstance().getFlyweight(ts);
+                        //把这个对象加入到组合对象中
+                        fw.add(tempFw);
+                    }
+                }else {
+                    fw = FlyweightFactory.getInstance().getFlyweight(ss[1] + "," + ss[2]);
+                    //zjh：也就是说相同的Flyweight，不会有多份。即使是不同的collection中的，
+                    //只要是安全实体和权限相同的，就AutorizationFlyWeight只有一个，因为工厂中是相通《安全实体和权限》这个key，直接从工厂自己的Map中拿出的
+                    //因为没有新new，而collection中保存的只是该对象的引用
+                    //如《薪资数据，查看》这个就只有一个。
+                }
+                col.add(fw);
             }
         }
         return col;
