@@ -6,17 +6,22 @@ public class Client {
         //需要先登陆，然后再判断是否有权限
         SecurityMgr mgr = SecurityMgr.getInstance();
 
-        mgr.login("张三");
-        mgr.login("李四");
+//        mgr.login("张三");
+//        mgr.login("李四");
         boolean f1 = mgr.hasPermit("张三","薪资数据","查看");
-        boolean f2 = mgr.hasPermit("李四","薪资数据","修改");
+        boolean f2 = mgr.hasPermit("李四","薪资数据","查看");
+        boolean f3 = mgr.hasPermit("李四","薪资数据","修改");
 
-        System.out.println("f1=="+f1);
-        System.out.println("f2=="+f2);
+//        System.out.println("f1=="+f1);
+//        System.out.println("f2=="+f2);
 
         for (int i=0;i<3;i++){
-            mgr.login("张三"+i);
+//            mgr.login("张三"+i);
             System.out.println(mgr.hasPermit("张三"+i,"测试数据","查看"));
         }
+
+        System.out.println("薪资数据,查看 被引用了"+FlyweightFactory.getInstance().getUseTimes("薪资数据,查看")+"次");
+        System.out.println("薪资数据,修改 被引用了"+FlyweightFactory.getInstance().getUseTimes("薪资数据,修改")+"次");
+        System.out.println("人员列表,查看 被引用了"+FlyweightFactory.getInstance().getUseTimes("人员列表,查看")+"次");
     }
 }

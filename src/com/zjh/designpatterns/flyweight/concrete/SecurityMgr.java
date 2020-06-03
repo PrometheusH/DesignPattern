@@ -21,17 +21,17 @@ public class SecurityMgr {
      * 在运行期间，用来存放登陆人员对应的权限
      * 在web应用期间，这些数据通常会存放在session中
      */
-    private Map<String, Collection<Flyweight>> map =
-            new HashMap<String, Collection<Flyweight>>();
+//    private Map<String, Collection<Flyweight>> map =
+//            new HashMap<String, Collection<Flyweight>>();
 
     /**
      * 模拟登陆的功能
      * @param user
      */
-    public void login(String user){
-        Collection<Flyweight> col = queryByUser(user);
-        map.put(user,col);
-    }
+//    public void login(String user){
+//        Collection<Flyweight> col = queryByUser(user);
+//        map.put(user,col);
+//    }
 
     /**
      * 判断某用户对某个安全实体是否拥有某种权限
@@ -41,15 +41,17 @@ public class SecurityMgr {
      * @return true 表示拥有相应的权限，false表示没有相应的权限
      */
     public boolean hasPermit(String user,String securityEntity,String permit){
-        Collection<Flyweight> col = map.get(user);
-        System.out.println("现在测试 "+securityEntity+" 的 "+permit+" 权限，map.size="+map.size());
+//        Collection<Flyweight> col = map.get(user);
+        //不再使用在本类中缓存了，因为如果在这里缓存了，计数就不准确了。
+        Collection<Flyweight> col = this.queryByUser(user);
+//        System.out.println("现在测试 "+securityEntity+" 的 "+permit+" 权限，map.size="+map.size());
         if(col==null||col.size()==0){
             System.out.println(user+"没有登陆或是没有被分配任何权限");
             return false;
         }
         for (Flyweight fm:col){
             //输出当前实例，看看是否是同一个实例对象
-            System.out.println("fm=="+fm);
+//            System.out.println("fm=="+fm);
             if (fm.match(securityEntity,permit)){
                 return true;
             }
