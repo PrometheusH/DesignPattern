@@ -1,5 +1,8 @@
 package com.zjh.designpatterns.observer.another_advanced;
 
+/**
+ * 这个例子：对订阅同一个主题的不同的观察者不同处理
+ */
 public class Client {
     public static void main(String[] args) {
         WaterQuality subject = new WaterQuality();
