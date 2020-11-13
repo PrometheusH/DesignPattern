@@ -5,7 +5,7 @@ package com.zjh.designpatterns.facade.old;
  */
 public class ConfigModel {
     /**
-     * 是否需要生成表现层
+     * 是否需要生成表现层，这里应该是false，ConfigManager中通过set方法设置，但因为没弄配置文件，所以直接用true了。
      */
     private boolean needGenPresentation = true;
     /**
