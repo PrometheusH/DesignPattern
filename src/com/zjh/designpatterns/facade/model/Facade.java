@@ -5,6 +5,8 @@ package com.zjh.designpatterns.facade.model;
  */
 public class Facade {
     public void test(){
+        //只是调用了这些API的一部分方法
+        //可以传进参数，获得结果
         AModuleApi a = new AModuleImpl();
         a.testA();
         BModuleApi b = new BModuleImpl();
