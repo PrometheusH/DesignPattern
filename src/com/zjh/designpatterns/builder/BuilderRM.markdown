@@ -1,6 +1,7 @@
 # Builder 生成器模式
 Builder负责提供所有的步骤方法，这些步骤方法都是生产自己持有产品的过程，但它不知道这些方法的执行顺序，Director负责将这些方法按规定的顺序运行与处理，最后客户端需要Builder中的产品。
 
+实质：分离算法和部件实现
 # 代码解析
 
 ## old
@@ -27,6 +28,37 @@ Builder负责提供所有的步骤方法，这些步骤方法都是生产自己�
 - Director类：定义Builder中这些步骤的顺序等
 
 ## concrete
+- Builder接口：提供存储文件的步骤，但不提供组合方式
+- Director类：持有Builder接口，按规定好的顺序组合Builder提供的步骤
+- TxtBuilder类：Builder接口的实现类
+- XmlBuilder类：Builder接口的实现类
+
+其他的跟old一样，当然Client的调用有改
+
+## advanced
+使用生成器生成复杂对象：意思是不断set属性来生成一个对象。
+需求：生成保险合同对象
+- InsuranceContract类：保险同类。   
+特点：构造方法是默认的Protected，只能本目录下的方法能够调用，出了本目录，就只能使用concreteBuilder类来生成。
+- ConcreteBuilder类：作用：生成保险合同类。builder对象调用build方法返回InsuranceContract对象。   
+特点：只有get方法，set方法全部是返回InsuraceContract对象。
+
+问题：InsuranceContract类和ConcreteBuilder类有相同的成员变量，为什么InsuranceContract类不自己实现这些方法？   
+有问题啊，要直接自己调用build方法，build方法必须是static类型，那么要使用成员变量，成员变量必须是static类型，这如果很多对象，static区域不就爆了。
+解决办法是：将ConcreteBuilder做成InsuranceConcract的内部类不就行了。就合二为一了，将构造方法私有化，其他人就不能直接new创建了，只能使用构造器。
+
+## advanced2
+这是带约束的，类的成员变量之间存在相互约束。   
+约束：保险要么和个人签订要么和公司签订，这两个变量有且只能有一个有值，生效日期大于失效日期   
+约束可以在set中设置，也可以统一在build方法中设置   
+这个包中加了约束，并将InsuranceContract和ConcreteBuilder合二为一   
+
+
+# 优缺点
+
+# 存在的问题
+
+
 
 
 

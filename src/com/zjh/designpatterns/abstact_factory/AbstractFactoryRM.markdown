@@ -6,11 +6,11 @@
 ## old
 需求：客户告诉装机工程师自己需要的CPU和主板，装机工程师组装电脑
 
-- CPU接口
+- CPU接口：CPU实现类需要实现的接口
 - IntlCPU类：实现CPU接口，有类变量CPU针脚数
 - AMDCPU类：实现CPU接口，有类变量CPU针脚数
 
-- Mainboard接口
+- Mainboard接口：Mainboard实现类需要实现的接口
 - GAMainboard类：实现Mainboard接口，有类变量CPU插槽孔数
 - MSIMainboard类：实现Mainboard接口，有类变量CPU插槽孔数
 
