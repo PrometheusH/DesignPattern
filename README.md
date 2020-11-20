@@ -8,7 +8,7 @@ Gof设计模式
 
 # Git问题
 如果master分支合并完了develop分支，忘了再切换回develop分支，直接在master分支上开发了
-这怎么办，如何能将当前的修改并入develop。是先提交master再merge到develop还是，能直接将commit的内容保存，切换develop分之后再oush？
+这怎么办，如何能将当前的修改并入develop。是先提交master再merge到develop还是，能直接将commit的内容保存，切换develop分之后再push？
 
 # IDEA快捷键
 Ctrl+A：到行首（达到Home键的效果）
