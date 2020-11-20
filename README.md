@@ -20,7 +20,6 @@ fn键+左方向键是HOME
 fn键+右方向键是END
 fn+上方向键是page up
 fn+下方向键是page down
-
 command+option+V：调用方法时，补齐该方法返回的类型和变量
 command+option+L：格式化代码
 command+N：重写方法、构造函数、getset等
