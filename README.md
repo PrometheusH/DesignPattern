@@ -13,6 +13,15 @@ Gof设计模式
 这怎么办，如何能将当前的修改并入develop。是先提交master再merge到develop还是，能直接将commit的内容保存，切换develop分之后再push？
 
 # IDEA快捷键
+command+option+B：查看该接口的实现类
+
+
+command+option+左右：光标左右
+
+ctrl+H：查看该类或接口的继承关系
+
+command+P：查看方法参数
+
 Ctrl+A：到行首（达到Home键的效果）
 
 Ctrl+E：到行尾（达到End键的效果）
@@ -35,3 +44,4 @@ command+option+V：调用方法时，补齐该方法返回的类型和变量
 command+option+L：格式化代码
 
 command+N：重写方法、构造函数、getset等
+
