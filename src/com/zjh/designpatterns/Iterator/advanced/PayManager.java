@@ -1,9 +1,10 @@
 package com.zjh.designpatterns.Iterator.advanced;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class PayManager {
+public class PayManager{
     private List list = new ArrayList();
 
     public List getPayList(){
@@ -22,5 +23,18 @@ public class PayManager {
         pm2.setUserName("李四");
         list.add(pm1);
         list.add(pm2);
+    }
+
+    public int size(){
+        return list.size();
+    }
+
+    public Object get(int index){
+        Object obj = null;
+        if (index<=list.size()){
+            obj=list.get(index);
+        }
+        return obj;
+
     }
 }

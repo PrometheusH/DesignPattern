@@ -1,11 +1,12 @@
 package com.zjh.designpatterns.Iterator.advanced;
 
-public class SalaryManager {
+public class SalaryManager{
     private PayModel[] pms =null;
 
     public PayModel[] getPays() {
         return pms;
     }
+
 
     public void calcSalary(){
         PayModel pm1 = new PayModel();
@@ -20,4 +21,12 @@ public class SalaryManager {
         pms[1] = pm2;
     }
 
+    public int size() {
+        return pms.length;
+    }
+
+
+    public Object get(int index) {
+        return pms[index];
+    }
 }
